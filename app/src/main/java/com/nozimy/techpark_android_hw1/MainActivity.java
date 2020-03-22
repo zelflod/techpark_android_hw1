@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements ItemsFragment.OnF
                 ItemsFragment itemsFragment = (ItemsFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
                 if (itemsFragment != null) {
                     DataHelper.createItem();
-                    itemsFragment.setItems(DataHelper.getItems());
+                    itemsFragment.notifyInserted(DataHelper.getItems().size());
                 }
                 return true;
             default:

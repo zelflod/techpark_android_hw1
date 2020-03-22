@@ -91,6 +91,10 @@ public class ItemsFragment extends Fragment {
         adapter.setItems(data);
     }
 
+    public void notifyInserted(int position){
+        adapter.notifyItemInserted(position);
+    }
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
         outState.putInt(COUNT_STATE_KEY, DataHelper.getItems().size());
