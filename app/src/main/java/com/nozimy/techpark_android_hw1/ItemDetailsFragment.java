@@ -37,9 +37,11 @@ public class ItemDetailsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_item_details, container, false);
 
+        DataHelper dataHelper = DataHelper.getInstance();
+
         TextView detailText = view.findViewById(R.id.detail_text);
-        detailText.setText(DataHelper.getItems().get(mPosition).getText());
-        detailText.setTextColor(DataHelper.getItems().get(mPosition).getColor());
+        detailText.setText(dataHelper.getItems().get(mPosition).getText());
+        detailText.setTextColor(dataHelper.getItems().get(mPosition).getColor());
 
         return view;
     }

@@ -34,7 +34,8 @@ public class ItemsFragment extends Fragment {
         mColumnCount = Integer.parseInt(getString(R.string.column_count));
 
         if (savedInstanceState != null) {
-            DataHelper.initData(savedInstanceState.getInt(COUNT_STATE_KEY)-DataHelper.getItems().size());
+            DataHelper dataHelper = DataHelper.getInstance();
+            dataHelper.initData(savedInstanceState.getInt(COUNT_STATE_KEY)-dataHelper.getItems().size());
         }
     }
 
@@ -48,7 +49,7 @@ public class ItemsFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.list);
         recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
 
-        List<NumberItem> items = DataHelper.getItems();
+        List<NumberItem> items = DataHelper.getInstance().getItems();
 
         adapter = new ItemAdapter(items, mListener);
         recyclerView.setAdapter(adapter);
@@ -97,7 +98,7 @@ public class ItemsFragment extends Fragment {
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        outState.putInt(COUNT_STATE_KEY, DataHelper.getItems().size());
+        outState.putInt(COUNT_STATE_KEY, DataHelper.getInstance().getItems().size());
 
         super.onSaveInstanceState(outState);
     }

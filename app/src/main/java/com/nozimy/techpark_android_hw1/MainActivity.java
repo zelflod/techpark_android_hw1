@@ -71,8 +71,9 @@ public class MainActivity extends AppCompatActivity implements ItemsFragment.OnF
             case R.id.action_add_number:
                 ItemsFragment itemsFragment = (ItemsFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
                 if (itemsFragment != null) {
-                    DataHelper.createItem();
-                    itemsFragment.notifyInserted(DataHelper.getItems().size());
+                    DataHelper dataHelper = DataHelper.getInstance();
+                    dataHelper.createItem();
+                    itemsFragment.notifyInserted(dataHelper.getItems().size());
                 }
                 return true;
             default:
