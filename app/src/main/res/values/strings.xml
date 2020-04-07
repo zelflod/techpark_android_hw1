@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">techpark_android_hw1</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_add_number">Добавить</string>
+    <string name="column_count">3</string>
+</resources>
