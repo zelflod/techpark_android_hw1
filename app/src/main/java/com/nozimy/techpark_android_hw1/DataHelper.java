@@ -8,18 +8,18 @@ import java.util.List;
 public class DataHelper {
     private List<NumberItem> items = new ArrayList<NumberItem>();
 
-    private static DataHelper single_instance;
+    private static DataHelper sInstance;
 
     private DataHelper(){
 
     }
 
     public static DataHelper getInstance(){
-        if (single_instance == null) {
-            single_instance = new DataHelper();
+        if (sInstance == null) {
+            sInstance = new DataHelper();
         }
 
-        return single_instance;
+        return sInstance;
     }
 
     public int createItem() {
